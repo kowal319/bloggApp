@@ -1,4 +1,4 @@
-package models;
+package com.example.blogg.models;
 
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
