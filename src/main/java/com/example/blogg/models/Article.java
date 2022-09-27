@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Date;
 
 @Entity
@@ -35,4 +36,7 @@ private String text;
 @Temporal(TemporalType.TIMESTAMP)
 @Column(name = "creation_date")
 private Date creationDate;
+
+    @OneToMany (mappedBy = "article", cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+    private Collection<Comment> comments;
     }
