@@ -1,48 +1,22 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Blogg App</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-          crossorigin="anonymous">
-    <link th:rel="stylesheet" th:href="@{assets/bootstrap-slider/css/bootstrap-slider.css}"/>
-    <link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
-    <link th:rel="stylesheet" th:href="@{webjars/font-awesome/5.11.2/css/all.css} "/>
+    <title>Title</title>
 </head>
 <body>
 
-        <table class = "table">
-            <thread class = "thead-dark">
-                <tr>
-                    <th> ID</th>
-                    <th> Title</th>
-                    <th> Text</th>
-                    <th> Date</th>
-                </tr>
-            </thread>
-            <tbody>
-            <tr th:each = "article: ${articles}" >
-                <td th:text = "${article.id}"></td>
-                <td th:text = "${article.title}"></td>
-                <td th:text = "${article.text}"></td>
-                <td th:text = "${article.creationDate}"></td>
-            </tr>
-            </tbody>
-        </table>
-        <div>
+<div th:fragment="articles(articles)">
+
+    <div class="articles_wrapper">
+        <div class="post" th:each="article : ${articles}">
+            <h2><a th:href="@{'/article/' + ${article.id}}" th:text="${article.title}">Title</a></h2>
+            <p th:text="${article.text}">body text</p>
+            <br>
         </div>
     </div>
-    </form>
-    </form>
-</div>
-</div>
-<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
-<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
-<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
-<script th:rel="stylesheet" th:src="@{assets/bootstrap-slider/bootstrap-slider.js}"></script>
-
 
 </div>
+
 </body>
 </html>
