@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<header th:fragment="header">
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a class="navbar-brand " href="#">Blogg App</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+
+            <!-- nav bar -->
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+
+            <!-- Search option -->
+            <form class="form-inline" th:action="@{/expenses}">
+                <input class="form-control mr-sm-2" type="text" name="keyword"  aria-label="Search" size="25"  required />
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                &nbsp;</form>
+        </div>
+    </nav>
+    </div>
+    </nav>
+
+    </div>
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <script th:rel="stylesheet" th:src="@{assets/bootstrap-slider/bootstrap-slider.js}"></script>
+
+    </div>
+
+</header>
+
+</body>
+</html>

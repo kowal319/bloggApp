@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:text-align="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -8,15 +8,21 @@
 
 <div th:fragment="articles(articles)">
 
-    <div class="articles_wrapper">
-        <div class="post" th:each="article : ${articles}">
-            <h2><a th:href="@{'/article/' + ${article.id}}" th:text="${article.title}">Title</a></h2>
-            <p th:text="${article.text}">body text</p>
-            <br>
+    <div class="post" th:each="article : ${articles}">
+        <div class="card mb-3">
+<!--            <img src="..." class="card-img-top" alt="...">-->
+        <div class="card-body">
+            <h5 class="card-title"><a th:href="@{'/article/' + ${article.id}}"    text-align:center;
+                                      th:text="${article.title}" >Title</a></h5>
+            <p class="card-text" th:text="${article.text}">body text></p>
+            <a href="#" class="btn btn-primary">Read</a>
+        </div>
+        <div class="card-footer text-muted">
+            <a th:text="${article.creationDate}"></a>
         </div>
     </div>
-
 </div>
 
+</div>
 </body>
 </html>

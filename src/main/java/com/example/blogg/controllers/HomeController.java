@@ -24,4 +24,8 @@ public class HomeController{
         model.addAttribute("articles", articles);
         return "Home";
     }
+    @GetMapping("/blank")
+    public String getPosts(){
+        return "blank";
+    }
 }
