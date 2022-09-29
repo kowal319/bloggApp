@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="/head :: Head"></head>
+
+<body>
+
+<div th:replace="/header :: Header"></div>
+
+<div class="container">
+
+    <div class = "container">
+        <div class = "row">
+            <div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+                <h1 class = "text-center"> Create New Article</h1>
+                    <form th:action="@{/Home}" th:object = "${article}" method="POST">
+                        <div class ="form-group">
+                        </div>
+                            <div class="mb-3">
+                                <label>Title</label>
+                                <input type="text" class="form-control"  placeholder="title">
+                            </div>
+                            <div class="mb-3">
+                                <label>Text</label>
+                                <textarea class="form-control" th:field = "*{text}" rows="3">
+                                </textarea>
+                            </div>
+<!--                        <div class ="form-group">-->
+<!--                            <label> Student First Name </label>-->
+<!--                            <input-->
+<!--                                    type = "text"-->
+<!--                                    name = "firstName"-->
+<!--                                    th:field = "*{firstName}"-->
+<!--                                    class = "form-control"-->
+<!--                                    placeholder="Enter Student First Name"-->
+<!--                            />-->
+<!--                        </div>-->
+            <div class = "box-footer">
+                <button type="submit" class = "btn btn-primary">
+                    Submit
+                </button>
+            </div>
+            </form>
+
+        </div>
+</div>
+
+<footer th:replace="/footer :: Footer"></footer>
+    </div>
+</div>
+</body>
+</html>

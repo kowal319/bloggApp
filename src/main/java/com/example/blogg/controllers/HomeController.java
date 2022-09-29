@@ -31,6 +31,7 @@ public class HomeController{
         model.addAttribute("article", article);
         return "addArticle";
     }
+
      @PostMapping("/Home")
      public String saveArticle(@ModelAttribute("articles")Article article){
      articleService.saveArticle(article);
