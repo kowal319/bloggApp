@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="/head :: Head"></head>
+
+<body>
+
+<div th:replace="/header :: Header"></div>
+
+<div class="container">
+
+    <div class = "container">
+        <div class = "row">
+            <div class ="container">
+                <h1 class = "text-center"></h1>
+                <form th:action="@{/Home}" th:object = "${article}" method="POST">
+                    <div class="mb-3">
+                        <input type="text" class="form-control"  th:field = "*{title}" readonly>
+                    </div>
+
+                    <div class="mb-3">
+                        <textarea class="form-control" th:field = "*{text}"readonly>
+                                </textarea>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+        <footer th:replace="/footer :: Footer"></footer>
+    </div>
+</div>
+</body>
+</html>

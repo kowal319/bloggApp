@@ -20,13 +20,13 @@ public class ArticleController {
         this.articleService = articleService;
     }
 
-    @GetMapping("/article/{id}")
-    @ResponseBody
-    public Article getArticle(@PathVariable Long id){
-        return articleService.getArticleById(id);
-    }
+//    @GetMapping("/article/{id}")
+//    @ResponseBody
+//    public Article getArticle(@PathVariable Long id){
+//        return articleService.getArticleById(id);
+//    }
 
-    @GetMapping("article/details/{id}")
+    @GetMapping("article/{id}")
     public String detailsArticle(@PathVariable Long id, Model model){
         Article article = articleService.getArticleById(id);
         model.addAttribute("article", article);
