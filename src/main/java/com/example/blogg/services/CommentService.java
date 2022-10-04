@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface CommentService {
 
-    List<Comment> getAllComments(Comment commment);
+    List<Comment> getAllComments(Comment comment);
 }
